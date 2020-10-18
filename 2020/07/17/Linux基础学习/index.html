@@ -15,13 +15,13 @@
 <meta property="og:site_name" content="AppleCat&#39;s blog">
 <meta property="og:description" content="Linux基础学习">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://up.enterdesk.com/edpic/2b/b1/f0/2bb1f0b98a1210f4ff51fda140c2f2b8.jpg">
-<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2014/06/003vPl7Rty6E8kZRlAEdc690.jpg">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/1440669/201912/1440669-20191231153513595-1647626567.png">
 <meta property="article:published_time" content="2020-07-17T07:11:01.000Z">
-<meta property="article:modified_time" content="2020-07-17T08:20:50.961Z">
+<meta property="article:modified_time" content="2020-10-18T02:28:50.272Z">
 <meta property="article:author" content="AppleCat">
+<meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://up.enterdesk.com/edpic/2b/b1/f0/2bb1f0b98a1210f4ff51fda140c2f2b8.jpg">
+<meta name="twitter:image" content="https://img2018.cnblogs.com/blog/1440669/201912/1440669-20191231153513595-1647626567.png">
   
     <link rel="alternative" href="/atom.xml" title="AppleCat&#39;s blog" type="application/atom+xml">
   
@@ -60,11 +60,11 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="/">主页</a></li>
+				<li><a href="/">主页/home</a></li>
 	        
-				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+				<li><a href="/archives/index.html">归档/archives</a></li>
 	        
-				<li><a href="/archives/index.html">归档</a></li>
+				<li><a href="/categories">分类/categories</a></li>
 	        
 			</ul>
 		</nav>
@@ -135,11 +135,11 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页/home</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/archives/index.html">归档/archives</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/archives/index.html">归档</a></li>
+					<li style="width: 33.333333333333336%"><a href="/categories">分类/categories</a></li>
 		        
 				</ul>
 			</nav>
@@ -175,15 +175,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Linux基础学习"><a href="#Linux基础学习" class="headerlink" title="Linux基础学习"></a>Linux基础学习</h1><p><img src="https://up.enterdesk.com/edpic/2b/b1/f0/2bb1f0b98a1210f4ff51fda140c2f2b8.jpg" alt=""></p>
-<a id="more"></a>
+        <h1 id="Linux基础学习"><a href="#Linux基础学习" class="headerlink" title="Linux基础学习"></a>Linux基础学习</h1><a id="more"></a>
 <h2 id="为什么学习Linux"><a href="#为什么学习Linux" class="headerlink" title="为什么学习Linux"></a>为什么学习Linux</h2><p>Linux是一个自由的操作系统，Linux在许多邻域有很大作用，比如服务器，嵌入式等等</p>
 <h2 id="Linux的目录结构"><a href="#Linux的目录结构" class="headerlink" title="Linux的目录结构"></a>Linux的目录结构</h2><ul>
-<li>linux的文件系统是采用级层式的树状目录结构，在此结构中最上层是根目录“/”，然后在此目录下再创建其它的目录。<br>在linux世界里。一切皆文件</li>
+<li>这是一个简单的Linux目录结构图</li>
 </ul>
-<p><img src="https://www.runoob.com/wp-content/uploads/2014/06/003vPl7Rty6E8kZRlAEdc690.jpg" alt=""></p>
-<p>上面是一张Linux的文件目录图片，下面是关于每个目录的粗略介绍</p>
+<p><img src="https://img2018.cnblogs.com/blog/1440669/201912/1440669-20191231153513595-1647626567.png" alt=""><br>在Linux中最重要的是多用户，Linux将不同的用户单独构成一个目录，放在/home目录下面</p>
 <ul>
+<li><p>linux的文件系统是采用级层式的树状目录结构，在此结构中最上层是根目录“/”，然后在此目录下再创建其它的目录。在linux世界里。一切皆文件</p>
+</li>
 <li><p>/bin：bin是Binary的缩写, 这个目录存放着最经常使用的命令。</p>
 </li>
 <li><p>/boot：这里存放的是启动Linux时使用的一些核心文件，包括一些连接文件以及镜像文件。</p>
@@ -203,7 +203,7 @@
 <li><p>/opt：<br>这是给主机额外安装软件所摆放的目录。比如你安装一个ORACLE数据库则就可以放到这个目录下。默认是空的。</p>
 </li>
 <li><p>/proc：<br>这个目录是一个虚拟的目录，它是系统内存的映射，我们可以通过直接访问这个目录来获取系统信息。<br>这个目录的内容不在硬盘上而是在内存里，我们也可以直接修改里面的某些文件，比如可以通过下面的命令来屏蔽主机的ping命令，使别人无法ping你的机器：</p>
-<pre><code>echo 1 &gt; /proc/sys/net/ipv4/icmp_echo_ignore_all</code></pre></li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo 1 &gt; &#x2F;proc&#x2F;sys&#x2F;net&#x2F;ipv4&#x2F;icmp_echo_ignore_all</span><br></pre></td></tr></table></figure></li>
 <li><p>/root：<br>该目录为系统管理员，也称作超级权限者的用户主目录。</p>
 </li>
 <li><p>/sbin：<br>s就是Super User的意思，这里存放的是系统管理员使用的系统管理程序。</p>
@@ -216,7 +216,7 @@
 </li>
 <li><p>/tmp：<br>这个目录是用来存放一些临时文件的。</p>
 </li>
-<li><p>/usr：<br>这是一个非常重要的目录，用户的很多应用程序和文件都放在这个目录下，类似于windows下的program files目录。</p>
+<li><p>/usr：这是一个非常重要的目录，用户的很多应用程序和文件都放在这个目录下，类似于windows下的program files目录。</p>
 </li>
 <li><p>/usr/bin：<br>系统用户使用的应用程序。</p>
 </li>
@@ -237,7 +237,103 @@
 <li><p>/var： 这是一个非常重要的目录，系统上跑了很多程序，那么每个程序都会有相应的日志产生，而这些日志就被记录到这个目录下，具体在/var/log 目录下，另外mail的预设放置也是在这里。</p>
 </li>
 </ul>
-
+<hr>
+<h2 id="终端使用技巧和Linux常用的基础命令"><a href="#终端使用技巧和Linux常用的基础命令" class="headerlink" title="终端使用技巧和Linux常用的基础命令"></a>终端使用技巧和Linux常用的基础命令</h2><p>Linux系统都是基于终端进行操作的   </p>
+<ol>
+<li>tab键：输入命令时，按下tab键，如果有唯一对应命令获选项，会自动补全，如果不唯一，按两下会出现相应选项</li>
+<li>↑，↓：可以切换到曾经用过的命令</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>命令</th>
+<th>用法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>ls</td>
+<td>查看当前目录下的文件</td>
+</tr>
+<tr>
+<td>2</td>
+<td>pwd</td>
+<td>查看当前所在目录</td>
+</tr>
+<tr>
+<td>3</td>
+<td>cd [目录名]</td>
+<td>进入该目录</td>
+</tr>
+<tr>
+<td>4</td>
+<td>touch [文件名]</td>
+<td>创建文件</td>
+</tr>
+<tr>
+<td>5</td>
+<td>mkdir [目录名]</td>
+<td>创建目录</td>
+</tr>
+<tr>
+<td>6</td>
+<td>rm [文件]</td>
+<td>删除指定文件</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Clear</td>
+<td>清屏</td>
+</tr>
+</tbody></table>
+<ul>
+<li>这是基本语法，对应的操作简单但是在没有桌面的Linux系统很常用<h2 id="Linux命令格式和帮助信息"><a href="#Linux命令格式和帮助信息" class="headerlink" title="Linux命令格式和帮助信息"></a>Linux命令格式和帮助信息</h2><h3 id="命令格式"><a href="#命令格式" class="headerlink" title="命令格式"></a>命令格式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">command [-optins] [parameter]</span><br></pre></td></tr></table></figure>
+说明：</li>
+<li>command: 命令名</li>
+<li>options: 选项，用来对命令进行限制</li>
+<li>parameter: 参数 </li>
+</ul>
+<p>[] 表示可选</p>
+<hr>
+<h3 id="帮助信息"><a href="#帮助信息" class="headerlink" title="帮助信息"></a>帮助信息</h3><p>–help</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1. command --help</span><br></pre></td></tr></table></figure>
+<p>man</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2.man command</span><br></pre></td></tr></table></figure>
+<p>使用这个命令会进入另一个界面，此时可以用以下按键进行操作</p>
+<table>
+<thead>
+<tr>
+<th>按键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>空格键</td>
+<td>显示下一屏</td>
+</tr>
+<tr>
+<td>Enter键</td>
+<td>滚动一页</td>
+</tr>
+<tr>
+<td>b</td>
+<td>回滚一屏</td>
+</tr>
+<tr>
+<td>f</td>
+<td>前滚一屏</td>
+</tr>
+<tr>
+<td>q</td>
+<td>退去</td>
+</tr>
+<tr>
+<td>/字符串</td>
+<td>搜索字符串</td>
+</tr>
+</tbody></table>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2>
       
 
       
@@ -266,7 +362,29 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/java//" class="article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -359,7 +477,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux基础学习"><span class="toc-number">1.</span> <span class="toc-text">Linux基础学习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么学习Linux"><span class="toc-number">1.1.</span> <span class="toc-text">为什么学习Linux</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux的目录结构"><span class="toc-number">1.2.</span> <span class="toc-text">Linux的目录结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#在-Linux-系统中，有几个目录是比较重要的，平时需要注意不要误删除或者随意更改内部文件。"><span class="toc-number">1.2.1.</span> <span class="toc-text">在 Linux 系统中，有几个目录是比较重要的，平时需要注意不要误删除或者随意更改内部文件。</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux基础学习"><span class="toc-number">1.</span> <span class="toc-text">Linux基础学习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么学习Linux"><span class="toc-number">1.1.</span> <span class="toc-text">为什么学习Linux</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux的目录结构"><span class="toc-number">1.2.</span> <span class="toc-text">Linux的目录结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#在-Linux-系统中，有几个目录是比较重要的，平时需要注意不要误删除或者随意更改内部文件。"><span class="toc-number">1.2.1.</span> <span class="toc-text">在 Linux 系统中，有几个目录是比较重要的，平时需要注意不要误删除或者随意更改内部文件。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#终端使用技巧和Linux常用的基础命令"><span class="toc-number">1.3.</span> <span class="toc-text">终端使用技巧和Linux常用的基础命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux命令格式和帮助信息"><span class="toc-number">1.4.</span> <span class="toc-text">Linux命令格式和帮助信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#命令格式"><span class="toc-number">1.4.1.</span> <span class="toc-text">命令格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#帮助信息"><span class="toc-number">1.4.2.</span> <span class="toc-text">帮助信息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-number">1.5.</span> <span class="toc-text"></span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -472,6 +590,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
             
             <div class="clearfix"></div>

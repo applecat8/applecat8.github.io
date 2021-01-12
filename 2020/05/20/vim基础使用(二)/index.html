@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 踩坑 | AppleCat&#39;s blog</title>
+  <title>vim基础使用(二) | AppleCat&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="AppleCat&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/tags/%E8%B8%A9%E5%9D%91/index.html">
+  <meta name="description" content="vim基础使用(二)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vim基础使用(二)">
+<meta property="og:url" content="http://yoursite.com/2020/05/20/vim%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8(%E4%BA%8C)/index.html">
 <meta property="og:site_name" content="AppleCat&#39;s blog">
+<meta property="og:description" content="vim基础使用(二)">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-20T05:53:28.000Z">
+<meta property="article:modified_time" content="2021-01-12T06:06:06.481Z">
 <meta property="article:author" content="AppleCat">
+<meta property="article:tag" content="vim">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="AppleCat&#39;s blog" type="application/atom+xml">
@@ -148,74 +153,221 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-  
+<article id="post-vim基础使用(二)" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/18/%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2020-10-18T07:50:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-18</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/18/%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/">踩坑日记之JSP编码</a>
+    <h1 class="article-title" itemprop="name">
+      vim基础使用(二)
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/05/20/vim%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8(%E4%BA%8C)/" class="archive-article-date">
+  	<time datetime="2020-05-20T05:53:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="vim基础使用-二"><a href="#vim基础使用-二" class="headerlink" title="vim基础使用(二)"></a>vim基础使用(二)</h1><a id="more"></a>
+<h3 id="3-命令模式"><a href="#3-命令模式" class="headerlink" title="3.命令模式"></a>3.命令模式</h3><p>3.1 进入命令模式</p>
+<p>在Vim的命令模式下，可以使用复杂的命令。在正常模式下键入 : ，光标就跳到屏幕最后一行，并在那里显示冒号，此时已进入命令模式。命令模式又称 末行模式 ，用户输入的内容均显示在屏幕的最后一行，按回车键，Vim 执行命令。</p>
+<p>3.2 常用命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">:w      保存文件，后面可以加上文件名，将文件另存为</span><br><span class="line">:e      后面跟上文件路径用于打开一个文件</span><br><span class="line">:q      在未作修改的情况下退出；</span><br><span class="line">:q!     放弃所有修改，退出编辑程序。</span><br><span class="line"></span><br><span class="line">保存并退出则可以讲两条命令结合起来使用（注意命令顺序，先保存，后退出)</span><br><span class="line">:wq</span><br></pre></td></tr></table></figure>
+<p>在命令模式下，允许从文件中读取正文，或将正文写入文件。例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">:w              将编辑的内容写入原始文件，用来保存编辑的中间结果</span><br><span class="line">:wq             将编辑的内容写入原始文件并退出编辑程序（相当于 ZZ 命令）</span><br><span class="line">:w file         将编辑的内容写入 file 文件，保持原有文件的内容不变</span><br><span class="line">:a,bw file      将第 a 行至第 b 行的内容写入 file 文件,&#39;.&#39;可以用来表示当前行号</span><br><span class="line">:r file         读取 file 文件的内容，插入当前光标所在行的后面</span><br><span class="line">:e file         编辑新文件 file 代替原有内容</span><br><span class="line">:f file         将当前文件重命名为 file</span><br><span class="line">:f              打印当前文件名称和状态，如文件的行数、光标所在的行号等</span><br></pre></td></tr></table></figure>
+<p>3.3搜索替换功能</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">:s&#x2F;old&#x2F;new           &#x2F;&#x2F;用new替换行中首次出现的old</span><br><span class="line">:s&#x2F;old&#x2F;new&#x2F;g         &#x2F;&#x2F;用new替换行中所有的old</span><br><span class="line">:n,m s&#x2F;old&#x2F;new&#x2F;g     &#x2F;&#x2F;用new替换从n到m行里所有的old</span><br><span class="line">:%s&#x2F;old&#x2F;new&#x2F;g        &#x2F;&#x2F;用new替换当前文件里所有的old</span><br></pre></td></tr></table></figure>
+<p>3.4 Shell切换</p>
+<p>当处于编辑的对话过程中时，可能需要执行一些Linux命令。如果需要保存当前的结果，退出编辑程序，再执行所需的Linux命令，然后再回头继续编辑过程，就显得十分累赘。如果能在编辑的环境中运行Linux命令就要省事得多。在Vim中，可以用下面的命令来做到这一点：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:!shell_command   执行完 shell_command 后回到Vim</span><br></pre></td></tr></table></figure>
+<p>这称为Shell切换。它允许执行任何可以在标准的Shell提示符下执行的命令。当这条命令执行完毕，控制返回给编辑程序。又可以继续编辑对话过程。</p>
+<p>3.5 分屏与标签页</p>
+<p>分屏</p>
+<p>普通的Vim模式，打开一个Vim程序只能查看一个文件，如果想同时查看多个文件，就需要用到Vim分屏与标签页功能。<br>Vim的分屏，主要有两种方式：上下分屏（水平分屏）和左右分屏（垂直分屏），在命令模式分别敲入以下命令即可：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">:split（可用缩写 :sp）            上下分屏；</span><br><span class="line">:vsplit（可用缩写 :vsp）          左右分屏。</span><br></pre></td></tr></table></figure>
+
+<p>另外，也可以在终端里启动vim时就开启分屏操作：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim -On file1 file2...   打开 file1 和 file2 ，垂直分屏</span><br><span class="line">vim -on file1 file2...   打开 file1 和 file2 ，水平分屏</span><br></pre></td></tr></table></figure>
+
+<p>理论上，一个Vim窗口，可以分为多个Vim屏幕，切换屏幕需要用键盘快捷键，命令分别有：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Ctrl+w+h            切换到当前分屏的左边一屏；</span><br><span class="line">Ctrl+w+l            切换到当前分屏的右边一屏；</span><br><span class="line">Ctrl+w+j            切换到当前分屏的下方一屏；</span><br><span class="line">Ctrl+w+k            切换到当前分屏的上方一屏。</span><br></pre></td></tr></table></figure>
+<p>即键盘上的h,j,k,l 四个Vim专用方向键，配合Ctrl键和w键（window的缩写），就能跳转到目标分屏。另外，也可以直接按 Ctrl+w+w 来跳转分屏，不过跳转方向则是在当前Vim窗口所有分屏中，按照逆时针方向跳转。<br>下面是改变尺寸的一些操作，主要是高度，对于宽度你可以使用 [Ctrl+W &lt;] 或是 [Ctrl+W &gt;] ，但这可能需要最新的版本才支持。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Ctrl+W &#x3D;            让所有的屏都有一样的高度；</span><br><span class="line">Ctrl+W +            增加高度；</span><br><span class="line">Ctrl+W -            减少高度。</span><br></pre></td></tr></table></figure>
+
+<p>标签页</p>
+<p>Vim的标签（Tab）页，类似浏览器的标签页，一个标签页打开一个Vim的窗口，一个Vim的窗口可以支持N个分屏。<br>在Vim中新建一个标签的命令是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:tabnew</span><br></pre></td></tr></table></figure>
+<p>如果要在新建标签页的同时打开一个文件，则可以在命令后面直接附带文件路径：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:tabnew filename</span><br></pre></td></tr></table></figure>
+<p>Vim中的每个标签页有一个唯一的数字序号，第一个标签页的序号是0，从左向右依次加一。关于标签页有一系列操作命令，简介如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">:tN[ext]                跳转到上一个匹配的标签</span><br><span class="line">:tabN[ext]              跳到上一个标签页</span><br><span class="line">:tabc[lose]             关闭当前标签页</span><br><span class="line">:tabdo                  为每个标签页执行命令</span><br><span class="line">:tabe[dit]              在新标签页里编辑文件</span><br><span class="line">:tabf[ind]              寻找 &#39;path&#39; 里的文件，在新标签页里编辑之</span><br><span class="line">:tabfir[st]             转到第一个标签页</span><br><span class="line">:tabl[ast]              转到最后一个标签页</span><br><span class="line">:tabm[ove]  N           把标签页移到序号为N位置</span><br><span class="line">:tabnew [filename]      在新标签页里编辑文件</span><br><span class="line">:tabn[ext]              转到下一个标签页</span><br><span class="line">:tabo[nly]              关闭所有除了当前标签页以外的所有标签页</span><br><span class="line">:tabp[revious]          转到前一个标签页</span><br><span class="line">:tabr[ewind]            转到第一个标签页</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">踩坑</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jsp</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vim</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/java//" class="article-tag-list-link color5">java</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://applecat8.github.io/2020/05/20/vim%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8(%E4%BA%8C)/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/05/20/vim%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8(%E4%B8%80)/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          vim基础使用(一)
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2020/05/19/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#vim基础使用-二"><span class="toc-number">1.</span> <span class="toc-text">vim基础使用(二)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-命令模式"><span class="toc-number">1.0.1.</span> <span class="toc-text">3.命令模式</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -238,9 +390,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020/11 | AppleCat&#39;s blog</title>
+  <title>vim基础使用(一) | AppleCat&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="AppleCat&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/archives/2020/11/index.html">
+  <meta name="description" content="vim基础使用(一)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vim基础使用(一)">
+<meta property="og:url" content="http://yoursite.com/2020/05/20/vim%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8(%E4%B8%80)/index.html">
 <meta property="og:site_name" content="AppleCat&#39;s blog">
+<meta property="og:description" content="vim基础使用(一)">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-20T05:53:28.000Z">
+<meta property="article:modified_time" content="2021-01-12T06:06:06.481Z">
 <meta property="article:author" content="AppleCat">
+<meta property="article:tag" content="vim">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="AppleCat&#39;s blog" type="application/atom+xml">
@@ -62,7 +67,7 @@
 			</ul>
 		</nav>
 		<nav>
-			总文章数 7
+			总文章数 8
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -148,48 +153,223 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-  
+<article id="post-vim基本使用(一)" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/22/vim%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2020-11-22T08:13:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-22</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/22/vim%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">vim基本使用</a>
+    <h1 class="article-title" itemprop="name">
+      vim基础使用(一)
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/2020/05/20/vim%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8(%E4%B8%80)/" class="archive-article-date">
+  	<time datetime="2020-05-20T05:53:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="vim基础使用-一"><a href="#vim基础使用-一" class="headerlink" title="vim基础使用(一)"></a>vim基础使用(一)</h1><a id="more"></a>
+<h2 id="vim的三种模式"><a href="#vim的三种模式" class="headerlink" title="vim的三种模式"></a>vim的三种模式</h2><h3 id="1-正常模式："><a href="#1-正常模式：" class="headerlink" title="1.正常模式："></a>1.正常模式：</h3><p>当刚进入vim时，就处于正常模式，此模式不可插入文字，输入的字符都会当作命令执行，一般用于移动光标和进行复制粘贴和剪切的操作，更为重要的是可以执行命令。</p>
+<p>1.1 跳转</p>
+<p>可以通过键盘的上，下，左，右键来移动光标，也可用下面的按键来移动：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">k	-&gt;	上移</span><br><span class="line">j	-&gt;	下移</span><br><span class="line">h	-&gt;	左移</span><br><span class="line">l	-&gt;	右移</span><br></pre></td></tr></table></figure>
+<p>上面的操作每次移动一行或一个字符，可以在输入命令前输入一个数字n，来跳转n个字符或n行例如<code>3j</code>来下移3行</p>
+<p>大范围的跳转：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">w		跳转下一个单词，光标位于下一个单词首个字符</span><br><span class="line">e		跳转下一个单词，光标位于下一个单词结束字符</span><br><span class="line">b		跳转上一个单词，光标位于上一个单词首个字符</span><br><span class="line">ctrl+b          后翻一页 </span><br><span class="line">ctrl+f	        前翻一页 </span><br><span class="line">gg              将光标定位到文件第一行起始位置；</span><br><span class="line">G               将光标定位到文件最后一行起始位置；</span><br><span class="line">*               当光标停留在一个单词上，* 键会在文件内搜索该单词，并跳转到下一处；</span><br><span class="line">#               当光标停留在一个单词上，# 在文件内搜索该单词，并跳转到上一处；</span><br><span class="line"></span><br><span class="line">行操作(*表示一个字符，n表示数字)：</span><br><span class="line">0           将光标移动到本行的开始</span><br><span class="line">$           将光标移动到本行的结束</span><br><span class="line">g_          到本行最后一个不是 blank 字符的位置。</span><br><span class="line">f*          跳到下一个输入字符的位置</span><br><span class="line">nf*         跳到下n个输入字符的位置</span><br><span class="line">t*,         跳到下一个输入字符前的前一个字符</span><br><span class="line">nt*,        跳到下n个输入字符前的前一个字符</span><br></pre></td></tr></table></figure>
+<p>1.2 搜索匹配</p>
+<p>和许多先进的编辑器一样，Vim 提供了强大的字符串搜索功能。要查找文件中指定字或短语出现的位置，可以用Vim直接进行搜索，而不必以手工方式进行。搜索方法是：键入字符 ‘/‘ ，后面跟以要搜索的字符串，然后按回车键。正常程序执行正向搜索（即朝文件末尾方向），并在找到指定字符串后，将光标停到该字符串的开头；键入 n 命令可以继续执行搜索，找出这一字符串下次出现的位置。用字符 ? 取代 / ，可以实现反向搜索（朝文件开头方向）。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;str2	        正向搜索字符串str</span><br><span class="line">n		跳到下一个str的位置</span><br><span class="line">N		跳到上一个str的位置</span><br><span class="line">?str	        反向搜索str</span><br></pre></td></tr></table></figure>
+<p>无论搜索方向如何，当到达文件末尾或开头时，搜索工作会循环到文件的另一端并继续执行。Vim中执行搜索匹配最强大的地方是结合 ==正则表达式== 来搜索</p>
+<p>1.3 替换与删除</p>
+<p>用<code>r</code>来替换字符，用<code>d</code>,<code>x</code>来删除行和字符，同样可以通过增加其他操作符来加强这些操作如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">rs      用s替换当前光标所在字符</span><br><span class="line">nrs     用s替换当前光标往后所在的n字符</span><br><span class="line">x       删除光标所指向的当前字符；</span><br><span class="line">nx      删除当前光标往后所在的n字符</span><br><span class="line">dd      删除光标所在行，并去除空隙；</span><br><span class="line">ndd     删除n行内容，并去除空隙；</span><br><span class="line">dw      删除光标右侧的单词；</span><br><span class="line">ndw     删除光标右侧的 n个单词；</span><br><span class="line">db      删除光标左侧的字；</span><br><span class="line">ndb     删除光标左侧的 n 个字；</span><br></pre></td></tr></table></figure>
+<p>1.4 复制粘贴</p>
+<p>需要注意的是上面的删除操作实际上会将删除的内容保存在剪贴板上,用户可以将其粘贴到指定位置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p		将剪切板的内容粘贴到光标后面</span><br><span class="line">P		将剪切板的内容粘贴到光标前面</span><br></pre></td></tr></table></figure>
 
+<p>如果缓冲区的内容是字符或字，直接粘贴在光标的前面或后面；如果缓冲区的内容为整行正文，执行上述粘贴命令将会粘贴在当前光标所在行的上一行或下一行。<br>注意上述两个命令中字母的大小写。Vim 正常器经常以一对大、小写字母（如 p 和 P）来提供一对相似的功能。通常，小写命令在光标的后面进行操作，大写命令在光标的前面进行操作。</p>
+<p>有时需要复制一段正文到新位置，同时保留原有位置的内容。这种情况下，首先应当把指定内容复制（而不是剪切）到内存缓冲区。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yy		复制当前行到缓冲区</span><br><span class="line">nyy		复制当前行向下n行到缓冲区</span><br></pre></td></tr></table></figure>
+
+<p>1.5 撤销和重复</p>
+<p>在正常文档的过程中，为消除某个错误的正常命令造成的后果，可以用撤消命令。另外，如果用户希望在新的光标位置重复前面执行过的正常命令，可用重复命令。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">u		撤销前一条的结果</span><br><span class="line">.		重复最后一条修改正文的命令</span><br></pre></td></tr></table></figure>
+
+<p>1.6 总结</p>
+<p>几乎大多数的操作都可以和0,$,数值，w，b，等范围操作进行组合，来进行大范围的操作，记忆的时候，可以参考加强记忆。</p>
+<h3 id="2-插入模式"><a href="#2-插入模式" class="headerlink" title="2.插入模式"></a>2.插入模式</h3><p>2.1 进入插入模式</p>
+<p>在正常模式下，通过以下操作可以进入插入模式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">i       光标位置不变，以达到在原字符左侧插入</span><br><span class="line">a       光标位置向后移动一个字符，以达到在原字符右侧插入</span><br><span class="line">o       在光标所在行的下一行增添新行</span><br><span class="line">O       在光标所在行的上一行增添新行</span><br><span class="line">I       在光标所在行的开头插入</span><br><span class="line">A       在光标所在行的末尾插入</span><br></pre></td></tr></table></figure>
+<p>在插入模式下，用户可以像其他编辑其一样输入文字</p>
+<p>2.2 退出插入模式</p>
+<p>在插入模式下可以按Esc键回到正常模式</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vim</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://applecat8.github.io/2020/05/20/vim%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8(%E4%B8%80)/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/05/20/MySQL%E7%9A%84%E5%AE%89%E8%A3%85/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          MySQL的安装
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2020/05/20/vim%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8(%E4%BA%8C)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vim基础使用(二)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#vim基础使用-一"><span class="toc-number">1.</span> <span class="toc-text">vim基础使用(一)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#vim的三种模式"><span class="toc-number">1.1.</span> <span class="toc-text">vim的三种模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-正常模式："><span class="toc-number">1.1.1.</span> <span class="toc-text">1.正常模式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-插入模式"><span class="toc-number">1.1.2.</span> <span class="toc-text">2.插入模式</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -199,7 +379,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020 AppleCat
+    		&copy; 2021 AppleCat
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -212,8 +392,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
@@ -307,6 +487,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">java细节</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vim</a>
               </li>
             
             <div class="clearfix"></div>

@@ -16,7 +16,7 @@
 <meta property="og:description" content="vim基础使用(一)">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-05-20T05:53:28.000Z">
-<meta property="article:modified_time" content="2021-01-12T06:06:06.481Z">
+<meta property="article:modified_time" content="2021-01-20T08:33:34.820Z">
 <meta property="article:author" content="AppleCat">
 <meta property="article:tag" content="vim">
 <meta name="twitter:card" content="summary">
@@ -67,7 +67,7 @@
 			</ul>
 		</nav>
 		<nav>
-			总文章数 8
+			总文章数 13
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -174,10 +174,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="vim基础使用-一"><a href="#vim基础使用-一" class="headerlink" title="vim基础使用(一)"></a>vim基础使用(一)</h1><a id="more"></a>
-<h2 id="vim的三种模式"><a href="#vim的三种模式" class="headerlink" title="vim的三种模式"></a>vim的三种模式</h2><h3 id="1-正常模式："><a href="#1-正常模式：" class="headerlink" title="1.正常模式："></a>1.正常模式：</h3><p>当刚进入vim时，就处于正常模式，此模式不可插入文字，输入的字符都会当作命令执行，一般用于移动光标和进行复制粘贴和剪切的操作，更为重要的是可以执行命令。</p>
+<h2 id="vim的三种模-式"><a href="#vim的三种模-式" class="headerlink" title="vim的三种模      式"></a>vim的三种模      式</h2><h3 id="1-正常模式："><a href="#1-正常模式：" class="headerlink" title="1.正常模式："></a>1.正常模式：</h3><p>当刚进入vim时，就处于正常模式，此模式不可插入文字，输入的字符都会当作命令执行，一般用于移动光标和进行复制粘贴和剪切的操作，更为重要的是可以执行命令。</p>
 <p>1.1 跳转</p>
 <p>可以通过键盘的上，下，左，右键来移动光标，也可用下面的按键来移动：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">k	-&gt;	上移</span><br><span class="line">j	-&gt;	下移</span><br><span class="line">h	-&gt;	左移</span><br><span class="line">l	-&gt;	右移</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">k	-&gt;	上移 </span><br><span class="line">j	-&gt;	下移</span><br><span class="line">h	-&gt;	左移</span><br><span class="line">l	-&gt;	右移</span><br></pre></td></tr></table></figure>
 <p>上面的操作每次移动一行或一个字符，可以在输入命令前输入一个数字n，来跳转n个字符或n行例如<code>3j</code>来下移3行</p>
 <p>大范围的跳转：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">w		跳转下一个单词，光标位于下一个单词首个字符</span><br><span class="line">e		跳转下一个单词，光标位于下一个单词结束字符</span><br><span class="line">b		跳转上一个单词，光标位于上一个单词首个字符</span><br><span class="line">ctrl+b          后翻一页 </span><br><span class="line">ctrl+f	        前翻一页 </span><br><span class="line">gg              将光标定位到文件第一行起始位置；</span><br><span class="line">G               将光标定位到文件最后一行起始位置；</span><br><span class="line">*               当光标停留在一个单词上，* 键会在文件内搜索该单词，并跳转到下一处；</span><br><span class="line">#               当光标停留在一个单词上，# 在文件内搜索该单词，并跳转到上一处；</span><br><span class="line"></span><br><span class="line">行操作(*表示一个字符，n表示数字)：</span><br><span class="line">0           将光标移动到本行的开始</span><br><span class="line">$           将光标移动到本行的结束</span><br><span class="line">g_          到本行最后一个不是 blank 字符的位置。</span><br><span class="line">f*          跳到下一个输入字符的位置</span><br><span class="line">nf*         跳到下n个输入字符的位置</span><br><span class="line">t*,         跳到下一个输入字符前的前一个字符</span><br><span class="line">nt*,        跳到下n个输入字符前的前一个字符</span><br></pre></td></tr></table></figure>
@@ -350,7 +350,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#vim基础使用-一"><span class="toc-number">1.</span> <span class="toc-text">vim基础使用(一)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#vim的三种模式"><span class="toc-number">1.1.</span> <span class="toc-text">vim的三种模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-正常模式："><span class="toc-number">1.1.1.</span> <span class="toc-text">1.正常模式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-插入模式"><span class="toc-number">1.1.2.</span> <span class="toc-text">2.插入模式</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#vim基础使用-一"><span class="toc-number">1.</span> <span class="toc-text">vim基础使用(一)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#vim的三种模-式"><span class="toc-number">1.1.</span> <span class="toc-text">vim的三种模      式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-正常模式："><span class="toc-number">1.1.1.</span> <span class="toc-text">1.正常模式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-插入模式"><span class="toc-number">1.1.2.</span> <span class="toc-text">2.插入模式</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>

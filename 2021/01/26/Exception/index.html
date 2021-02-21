@@ -6,18 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Exception | AppleCat&#39;s blog</title>
+  <title>Spring Exception | AppleCat&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type ‘xxx’ available12345678org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean o">
+  <meta name="description" content="org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type ‘xxx’ available">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Exception">
+<meta property="og:title" content="Spring Exception">
 <meta property="og:url" content="http://yoursite.com/2021/01/26/Exception/index.html">
 <meta property="og:site_name" content="AppleCat&#39;s blog">
-<meta property="og:description" content="org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type ‘xxx’ available12345678org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean o">
+<meta property="og:description" content="org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type ‘xxx’ available">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-26T12:52:26.000Z">
-<meta property="article:modified_time" content="2021-01-26T13:13:06.429Z">
+<meta property="article:modified_time" content="2021-02-21T14:29:13.913Z">
 <meta property="article:author" content="AppleCat">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="spring">
+<meta property="article:tag" content="exception">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="AppleCat&#39;s blog" type="application/atom+xml">
@@ -66,7 +69,7 @@
 			</ul>
 		</nav>
 		<nav>
-			总文章数 13
+			总文章数 14
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -159,7 +162,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Exception
+      Spring Exception
     </h1>
   
 
@@ -172,13 +175,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="org-springframework-beans-factory-NoSuchBeanDefinitionException-No-qualifying-bean-of-type-‘xxx’-available"><a href="#org-springframework-beans-factory-NoSuchBeanDefinitionException-No-qualifying-bean-of-type-‘xxx’-available" class="headerlink" title="org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type ‘xxx’ available"></a>org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type ‘xxx’ available</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type <span class="string">'com.applecat.aop.service.impl.AccountServiceImpl'</span> available</span><br><span class="line"></span><br><span class="line">	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:<span class="number">351</span>)</span><br><span class="line">	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:<span class="number">342</span>)</span><br><span class="line">	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:<span class="number">1127</span>)</span><br><span class="line">	at com.applecat.aop.Execute.test1(Execute.java:<span class="number">14</span>)</span><br><span class="line">    ...........</span><br></pre></td></tr></table></figure>
+        <h1 id="org-springframework-beans-factory-NoSuchBeanDefinitionException-No-qualifying-bean-of-type-‘xxx’-available"><a href="#org-springframework-beans-factory-NoSuchBeanDefinitionException-No-qualifying-bean-of-type-‘xxx’-available" class="headerlink" title="org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type ‘xxx’ available"></a>org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type ‘xxx’ available</h1><a id="more"></a>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type <span class="string">'com.applecat.aop.service.impl.AccountServiceImpl'</span> available</span><br><span class="line"></span><br><span class="line">	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:<span class="number">351</span>)</span><br><span class="line">	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:<span class="number">342</span>)</span><br><span class="line">	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:<span class="number">1127</span>)</span><br><span class="line">	at com.applecat.aop.Execute.test1(Execute.java:<span class="number">14</span>)</span><br><span class="line">    ...........</span><br></pre></td></tr></table></figure>
 <p>今天学习spring Aop的时候出现的错误，刚开始的代码如下</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test1</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ClassPathXmlApplicationContext context = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"springAop.xml"</span>);</span><br><span class="line">    AccountServiceImpl service = context.getBean(AccountServiceImpl<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">    service.saveAccount();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>由于同配置文件下的其他bean都没有报错，仔细检查了配置文件也没有错误，所以耽误了一会时间，上网查了后发现</p>
 <p>原来：对于Spring AOP 采用两种代理方法，一种是常规JDK，一种是CGLIB，我的AccountServiceImpli实现 了一个接口AccountService ，当代理对象实现了至少一个接口时，默认使用JDK动态创建代理对象，当代理对象没有实现任何接口时，就会使用CGLIB方法,而JDK动态代理（也就是基于接口的动态代理）返回的是以为接口声明的对象，所以当我用实现类的类加载器获取bean对象时就会报错</p>
 <p>改进</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test1</span><span class="params">()</span></span>&#123;</span><br><span class="line">        ClassPathXmlApplicationContext context = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"springAop.xml"</span>);</span><br><span class="line">        <span class="comment">//---------第一种-----------</span></span><br><span class="line">        <span class="comment">//AccountService service = (AccountService) context.getBean("account");</span></span><br><span class="line">        <span class="comment">//---------第二种-----------</span></span><br><span class="line">        AccountService service = context.getBean(AccountService<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">        service.saveAccount();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
       
 
       
@@ -207,7 +213,37 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">exception</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/spring//" class="article-tag-list-link color2">spring</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -271,11 +307,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/02/01/ThinkInJava/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/02/05/ssm%E6%A1%86%E6%9E%B6%E6%95%B4%E5%90%88/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          ThinkInJava
+          ssm框架整合
         
       </div>
     </a>
@@ -450,6 +486,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vim</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">exception</a>
               </li>
             
             <div class="clearfix"></div>

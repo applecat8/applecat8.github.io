@@ -8,16 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>ThinkInJava | AppleCat&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="继承与初始化 在类的内部，变量定义的先后顺序决定了初始化的顺序即使变量散布与方法定义之间，他们仍然会在仍何方法（包括构造器）被调用之前初始化 静态初始化发生在非静态初始化之前 静态初始化只发生在类被加载时（即class文件加载进内存时） 而非静态数据只在每次创建对象时才会被初始化 当一个子类被加载时会先加载其父类  12345678910111213141516171819202122232425">
+  <meta name="description" content="继承与初始化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ThinkInJava">
-<meta property="og:url" content="http://yoursite.com/2021/02/01/ThinkInJava/index.html">
+<meta property="og:url" content="http://yoursite.com/2020/02/01/ThinkInJava/index.html">
 <meta property="og:site_name" content="AppleCat&#39;s blog">
-<meta property="og:description" content="继承与初始化 在类的内部，变量定义的先后顺序决定了初始化的顺序即使变量散布与方法定义之间，他们仍然会在仍何方法（包括构造器）被调用之前初始化 静态初始化发生在非静态初始化之前 静态初始化只发生在类被加载时（即class文件加载进内存时） 而非静态数据只在每次创建对象时才会被初始化 当一个子类被加载时会先加载其父类  12345678910111213141516171819202122232425">
+<meta property="og:description" content="继承与初始化">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-02-01T08:48:03.000Z">
-<meta property="article:modified_time" content="2021-02-01T09:50:45.591Z">
+<meta property="article:published_time" content="2020-02-01T08:48:03.000Z">
+<meta property="article:modified_time" content="2021-02-21T14:30:07.616Z">
 <meta property="article:author" content="AppleCat">
+<meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="AppleCat&#39;s blog" type="application/atom+xml">
@@ -66,7 +67,7 @@
 			</ul>
 		</nav>
 		<nav>
-			总文章数 13
+			总文章数 14
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -164,15 +165,16 @@
   
 
         
-        <a href="/2021/02/01/ThinkInJava/" class="archive-article-date">
-  	<time datetime="2021-02-01T08:48:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-01</time>
+        <a href="/2020/02/01/ThinkInJava/" class="archive-article-date">
+  	<time datetime="2020-02-01T08:48:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="继承与初始化"><a href="#继承与初始化" class="headerlink" title="继承与初始化"></a>继承与初始化</h1><ul>
+        <h1 id="继承与初始化"><a href="#继承与初始化" class="headerlink" title="继承与初始化"></a>继承与初始化</h1><a id="more"></a>
+<ul>
 <li>在类的内部，变量定义的先后顺序决定了初始化的顺序即使变量散布与方法定义之间，他们仍然会在仍何方法（包括构造器）被调用之前初始化</li>
 <li>静态初始化发生在非静态初始化之前</li>
 <li>静态初始化只发生在类被加载时（即class文件加载进内存时）</li>
@@ -210,7 +212,29 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/java//" class="article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -260,7 +284,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://applecat8.github.io/2021/02/01/ThinkInJava/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://applecat8.github.io/2020/02/01/ThinkInJava/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -274,11 +298,15 @@
   
 <nav id="article-nav">
   
-  
-    <a href="/2021/01/26/Exception/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Exception</div>
-      <i class="icon-circle-right"></i>
+    <a href="/2020/05/19/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          我的第一篇博客文章
+        
+      </div>
     </a>
+  
   
 </nav>
 
@@ -444,6 +472,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vim</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">exception</a>
               </li>
             
             <div class="clearfix"></div>

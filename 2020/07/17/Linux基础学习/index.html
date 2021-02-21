@@ -17,7 +17,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://img2018.cnblogs.com/blog/1440669/201912/1440669-20191231153513595-1647626567.png">
 <meta property="article:published_time" content="2020-07-17T07:11:01.000Z">
-<meta property="article:modified_time" content="2021-01-31T13:37:21.469Z">
+<meta property="article:modified_time" content="2021-02-20T05:50:51.316Z">
 <meta property="article:author" content="AppleCat">
 <meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
@@ -69,7 +69,7 @@
 			</ul>
 		</nav>
 		<nav>
-			总文章数 13
+			总文章数 14
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -200,21 +200,7 @@
 </li>
 <li><p>/mnt：<br>系统提供该目录是为了让用户临时挂载别的文件系统的，我们可以将光驱挂载在/mnt/上，然后进入该目录就可以查看光驱里的内容了。</p>
 </li>
-<li><p>/opt：7<br>这是给主机额外安装软件所摆放的目录。比如你安装一个ORACLE数据库则就可以放到这个目录下。默认是空的。</p>
-</li>
-<li><p>/proc：<br>这个目录是一个虚拟的目录，它是系统内存的映射，我们可以通过直接访问这个目录来获取系统信息。<br>这个目录的内容不在硬盘上而是在内存里，我们也可以直接修改里面的某些文件，比如可以通过下面的命令来屏蔽主机的ping命令，使别人无法ping你的机器：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo 1 &gt; &#x2F;proc&#x2F;sys&#x2F;net&#x2F;ipv4&#x2F;icmp_echo_ignore_all</span><br></pre></td></tr></table></figure></li>
 <li><p>/root：<br>该目录为系统管理员，也称作超级权限者的用户主目录。</p>
-</li>
-<li><p>/sbin：<br>s就是Super User的意思，这里存放的是系统管理员使用的系统管理程序。</p>
-</li>
-<li><p>/selinux：<br>这个目录是Redhat/CentOS所特有的目录，Selinux是一个安全机制，类似于windows的防火墙，但是这套机制比较复杂，这个目录就是存放selinux相关的文件的。</p>
-</li>
-<li><p>/srv：<br>该目录存放一些服务启动之后需要提取的数据。</p>
-</li>
-<li><p>/sys：<br>这是linux2.6内核的一个很大的变化。该目录下安装了2.6内核中新出现的一个文件系统 sysfs。sysfs文件系统集成了下面3种文件系统的信息：针对进程信息的proc文件系统、针对设备的devfs文件系统以及针对伪终端的devpts文件系统。该文件系统是内核设备树的一个直观反映。当一个内核对象被创建的时候，对应的文件和目录也在内核对象子系统中被创建。</p>
-</li>
-<li><p>/tmp：<br>这个目录是用来存放一些临时文件的。</p>
 </li>
 <li><p>/usr：这是一个非常重要的目录，用户的很多应用程序和文件都放在这个目录下，类似于windows下的program files目录。</p>
 </li>
@@ -227,14 +213,6 @@
 <li><p>/var：<br>这个目录中存放着在不断扩充着的东西，我们习惯将那些经常被修改的目录放在这个目录下。包括各种日志文件。</p>
 </li>
 <li><p>/run：<br>是一个临时文件系统，存储系统启动以来的信息。当系统重启时，这个目录下的文件应该被删掉或清除。如果你的系统上有 /var/run 目录，应该让它指向 run。</p>
-</li>
-</ul>
-<h3 id="在-Linux-系统中，有几个目录是比较重要的，平时需要注意不要误删除或者随意更改内部文件。"><a href="#在-Linux-系统中，有几个目录是比较重要的，平时需要注意不要误删除或者随意更改内部文件。" class="headerlink" title="在 Linux 系统中，有几个目录是比较重要的，平时需要注意不要误删除或者随意更改内部文件。"></a>在 Linux 系统中，有几个目录是比较重要的，平时需要注意不要误删除或者随意更改内部文件。</h3><ul>
-<li><p>/etc： 上边也提到了，这个是系统中的配置文件，如果你更改了该目录下的某个文件可能会导致系统不能启动。</p>
-</li>
-<li><p>/bin, /sbin, /usr/bin, /usr/sbin: 这是系统预设的执行文件的放置目录，比如 ls 就是在/bin/ls 目录下的。值得提出的是，/bin, /usr/bin 是给系统用户使用的指令（除root外的通用户），而/sbin, /usr/sbin 则是给root使用的指令。</p>
-</li>
-<li><p>/var： 这是一个非常重要的目录，系统上跑了很多程序，那么每个程序都会有相应的日志产生，而这些日志就被记录到这个目录下，具体在/var/log 目录下，另外mail的预设放置也是在这里。</p>
 </li>
 </ul>
 <hr>
@@ -409,7 +387,32 @@
 </ul>
 </li>
 <li>unzip [压缩文件]<ul>
-<li>解压zip命令压缩的文件<br>01010111-01000000-00110111-010-00000-00-110111-0-1000000–00110110–1011001-0-001110-00-11111-001-00010111-00001101-01110100-00000011-00111011-01011001-00011<br>1</li>
+<li>解压zip命令压缩的文件</li>
+</ul>
+</li>
+</ol>
+<h3 id="文件系统管理"><a href="#文件系统管理" class="headerlink" title="文件系统管理"></a>文件系统管理</h3><ol>
+<li>df [选项] [挂载点]  — 文件系统查看命令<ul>
+<li>-a 显示所有文件系统信息</li>
+<li>-h 使用习惯的容量单位</li>
+<li>-T 显示文件系统类型</li>
+</ul>
+</li>
+<li>du [选项] [目录或文件名] — 统计目录或文件大小<ul>
+<li>-s 不打印子目录和文件 </li>
+</ul>
+</li>
+<li>dumpe2fs 分区设备文件名 — ext文件系统的信息</li>
+<li>xfs_info 挂载点|设备文件名 — xfs文件系统的信息</li>
+</ol>
+<h3 id="挂载命令"><a href="#挂载命令" class="headerlink" title="挂载命令"></a>挂载命令</h3><ol>
+<li>mount [-t 文件系统] [-L 卷标名] [-o 特殊选项] 设备文件名 挂载点<ul>
+<li>-t 文件系统, <ul>
+<li>光盘 -&gt; iso9660</li>
+<li>fat16 -&gt; fat</li>
+<li>fat32 -&gt; vfat</li>
+</ul>
+</li>
 </ul>
 </li>
 </ol>
@@ -566,7 +569,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux基础学习"><span class="toc-number">1.</span> <span class="toc-text">Linux基础学习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么学习Linux"><span class="toc-number">1.1.</span> <span class="toc-text">为什么学习Linux</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux的目录结构"><span class="toc-number">1.2.</span> <span class="toc-text">Linux的目录结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#在-Linux-系统中，有几个目录是比较重要的，平时需要注意不要误删除或者随意更改内部文件。"><span class="toc-number">1.2.1.</span> <span class="toc-text">在 Linux 系统中，有几个目录是比较重要的，平时需要注意不要误删除或者随意更改内部文件。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#终端使用技巧和Linux常用的基础命令"><span class="toc-number">1.3.</span> <span class="toc-text">终端使用技巧和Linux常用的基础命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux命令格式和帮助信息"><span class="toc-number">1.4.</span> <span class="toc-text">Linux命令格式和帮助信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#命令格式"><span class="toc-number">1.4.1.</span> <span class="toc-text">命令格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#帮助信息"><span class="toc-number">1.4.2.</span> <span class="toc-text">帮助信息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件的基础信息"><span class="toc-number">1.5.</span> <span class="toc-text">文件的基础信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#文件处理命令"><span class="toc-number">1.5.1.</span> <span class="toc-text">文件处理命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#权限管理命令"><span class="toc-number">1.5.2.</span> <span class="toc-text">权限管理命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件搜索命令"><span class="toc-number">1.5.3.</span> <span class="toc-text">文件搜索命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#压缩解压命令"><span class="toc-number">1.5.4.</span> <span class="toc-text">压缩解压命令</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux基础学习"><span class="toc-number">1.</span> <span class="toc-text">Linux基础学习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么学习Linux"><span class="toc-number">1.1.</span> <span class="toc-text">为什么学习Linux</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux的目录结构"><span class="toc-number">1.2.</span> <span class="toc-text">Linux的目录结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#终端使用技巧和Linux常用的基础命令"><span class="toc-number">1.3.</span> <span class="toc-text">终端使用技巧和Linux常用的基础命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux命令格式和帮助信息"><span class="toc-number">1.4.</span> <span class="toc-text">Linux命令格式和帮助信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#命令格式"><span class="toc-number">1.4.1.</span> <span class="toc-text">命令格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#帮助信息"><span class="toc-number">1.4.2.</span> <span class="toc-text">帮助信息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件的基础信息"><span class="toc-number">1.5.</span> <span class="toc-text">文件的基础信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#文件处理命令"><span class="toc-number">1.5.1.</span> <span class="toc-text">文件处理命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#权限管理命令"><span class="toc-number">1.5.2.</span> <span class="toc-text">权限管理命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件搜索命令"><span class="toc-number">1.5.3.</span> <span class="toc-text">文件搜索命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#压缩解压命令"><span class="toc-number">1.5.4.</span> <span class="toc-text">压缩解压命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件系统管理"><span class="toc-number">1.5.5.</span> <span class="toc-text">文件系统管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#挂载命令"><span class="toc-number">1.5.6.</span> <span class="toc-text">挂载命令</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -707,6 +710,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vim</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">exception</a>
               </li>
             
             <div class="clearfix"></div>
